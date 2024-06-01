@@ -1,0 +1,209 @@
+:root {
+    --minWidth: 375px;
+    --maxWidth: 1440px;
+
+    /* Colors */
+
+    --clr-primary-100: hsl(0, 36%, 70%);
+    --clr-primary-200: hsl(0, 93%, 68%);
+
+    --clr-neutral-100: hsl(0, 6%, 24%);
+    --clr-neutral-200: hsla(0, 36%, 70%, 0.581);
+    --clr-neutral-300: hsl(0, 0%, 100%);
+    --clr-neutral-400: hsla(0, 3%, 69%, 0.535);
+    --clr-neutral-500: hsl(0, 0%, 100%);
+
+    
+    --gradient-100: linear-gradient(135deg, hsl(0, 100%, 95%), hsl(0, 100%, 75%));
+    --gradient-200: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+
+    /* Font Size */
+    --fs-100: 1rem;
+
+    /* Font Family */
+
+    --ff-100: "Josefin Sans", sans-serif;
+    /* Font Weights */
+
+    --fw-100: 300;
+    --fw-200: 400;
+    --fw-300: 600;
+}
+
+@media (width > 850px) {
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Global Setup */
+
+article {
+    max-width: var(--maxWidth);
+    width: 100%;
+    height: 100%;
+    display: grid;
+}
+
+/* Logo */
+
+article .logo {
+    grid-column: 1 / span 4;
+    grid-row: 1 / span 1;
+    display: flex;
+    align-items: flex-end;
+}
+
+article .logo svg {
+   margin-left: 10.5%;
+}
+
+/* Content */
+
+article .content {
+    grid-row: 2 / span 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+article .content h1 {
+    width: 60%;
+    text-transform: uppercase;
+    font-family: var(--ff-100);
+    font-size: calc(var(--fs-100) + 2rem);
+    color: var(--clr-neutral-100);
+    font-weight: var(--fw-200);
+    letter-spacing: 20px;
+}
+
+article .content h1 span {
+    font-weight: var(--fw-100);
+    color: var(--clr-primary-100);
+}
+
+article .content p {
+    width: 60%;
+    font-size: var(--fs-100);
+    font-family: var(--ff-100);
+    font-weight: var(--fw-200);
+    color: var(--clr-primary-100);
+    line-height: 25px;
+}
+
+article .content form {
+    width: 60%;
+    min-height: 80px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    margin-block-start: 3em;
+}
+
+article .content form input[type="email"],
+article .content form input[type="submit"],
+article .content form .fa-solid,
+article .content form span {
+    position: absolute;
+}
+
+article .content form .fa-solid,
+article .content form span {
+    display: none;
+}
+
+
+article .content form input[type="email"] {
+    width: 100%;
+    height: 50px;
+    border-radius: 3em;
+    color: var(--clr-primary-100);
+    border: 2px solid var(--clr-primary-100);
+}
+
+article .content form input[type="email"],
+article .content form input[type="email"]::placeholder {
+    text-indent: 2em;
+}
+
+article .content form input[type="email"]::placeholder {
+    text-indent: 2em;
+    color: var(--clr-neutral-200);
+}
+
+article .content form input[type="submit"] {
+    width: 70px;
+    height: 50px;
+    border-radius: 3em;
+    right: 0;
+    font-size: calc(var(--fs-100) + 1rem);
+    color: var(--clr-neutral-500);
+    background: var(--gradient-200);
+    border: none;
+    box-shadow: 0 0 15px 1px var(--clr-neutral-400);
+    cursor: pointer;
+    transition: 500ms all;
+
+}
+
+article .content form input[type="submit"]:hover {
+    background: linear-gradient(135deg, hsl(0, 100%, 95%), hsl(0, 100%, 75%));
+    box-shadow: 0 20px 15px 1px var(--clr-neutral-400);
+    transform: scale(1.1);
+    transition: 500ms all;
+}
+
+article .content form .fa-solid {
+    right: 80px;
+    top: 13px;
+    font-size: calc(var(--fs-100) + .4rem);
+    color: var(--clr-primary-200);
+}
+
+article .content form span {
+    color: var(--clr-primary-200);
+    font-family: var(--ff-100);
+    bottom: 12px;
+    left: 20px;
+}
+
+/* Picture */
+
+article .picture {
+    height: 100%;
+    grid-column: 2 / span 4;
+    grid-row: 1 / span 5;
+}
+
+article .picture .desktop {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: 0 0;
+}
+
+article .picture .mobile {
+    display: none;
+}
+
+}
